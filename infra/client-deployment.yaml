@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-logging-client-deployment
+spec:
+  selector:
+    matchLabels:
+      app: test-logging-client
+  template:
+    metadata:
+        app: test-logging-client
+    spec:
+      containers:
+      - name: test-logging-client
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000

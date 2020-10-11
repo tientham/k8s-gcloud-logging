@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-logging-client-service
+spec:
+  type: ClusterIP
+  selector:
+    component: test-logging-client
+  ports:
+    - name: test-logging-client
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
