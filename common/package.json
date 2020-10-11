@@ -1,0 +1,27 @@
+{
+  "name": "@tmt_k8s_logging/common",
+  "version": "1.0.1",
+  "description": "A simple logging common nodejs lib to serve my k8s logging test project",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "clean": "del ./build/*",
+    "build": "npm run clean && tsc",
+    "pub": "npm version patch && npm run build && npm publish --access public"
+  },
+  "keywords": [],
+  "author": "Minh Tien To",
+  "license": "ISC",
+  "devDependencies": {
+    "del-cli": "^3.0.1",
+    "typescript": "^3.9.6"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.7",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.0"
+  }
+}
