@@ -1,6 +1,6 @@
 {
   "name": "@tmt_k8s_logging/common",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple logging common nodejs lib to serve my k8s logging test project",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
