@@ -6,7 +6,7 @@ const start = async () => {
 
   console.log('[User MicroService] Connected');
 
-  app.listen(3000, () => {
+  app.listen(3002, () => {
     console.log('[User MicroService] - Listen on port 3000');
   });
 };

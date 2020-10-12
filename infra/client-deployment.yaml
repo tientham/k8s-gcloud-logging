@@ -3,19 +3,24 @@ kind: Deployment
 metadata:
   name: test-logging-client-deployment
 spec:
+  replicas: 0
   selector:
     matchLabels:
-      app: test-logging-client
+      component: test-logging-client
   template:
     metadata:
-        app: test-logging-client
+      labels:
+        component: test-logging-client
     spec:
       containers:
       - name: test-logging-client
-        image: <Image>
+        image: gcr.io/papaya-testing-project/test-logging-client-deployment:v1
         resources:
+          requests:
+              memory: "256Mi"
+              cpu: "62m"
           limits:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: "512Mi"
+            cpu: "93m"
         ports:
         - containerPort: 3000

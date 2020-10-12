@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-logging-payment-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: test-logging-payment
+  template:
+    metadata:
+      labels:
+        component: test-logging-payment
+    spec:
+      containers:
+      - name: test-logging-payment
+        image: gcr.io/papaya-testing-project/test-logging-payment-deployment:v3
+        resources:
+          requests:
+              memory: "256Mi"
+              cpu: "62m"
+          limits:
+            memory: "512Mi"
+            cpu: "93m"
+        ports:
+        - containerPort: 3001

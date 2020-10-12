@@ -1,0 +1,52 @@
+{
+  "sourceMaps": true,
+  "retainLines": true,
+  "env": {
+    "test": {
+      "plugins": [
+        "istanbul"
+      ]
+    }
+  },
+  "presets": [
+    "@babel/env",
+    "@babel/typescript"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src/server",
+          "./src/public/js"
+        ],
+        "alias": {
+          "images/*": "./src/public/images"
+        },
+        "extensions": [
+          ".ts",
+          ".js",
+          ".css",
+          ".png"
+        ]
+      }
+    ],
+    [
+      "babel-plugin-inline-import",
+      {
+        "extensions": [
+          ".json"
+        ]
+      }
+    ],
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ],
+    "transform-object-rest-spread",
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread"
+  ]
+}

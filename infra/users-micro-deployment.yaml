@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-logging-users-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: test-logging-users
+  template:
+    metadata:
+      labels:
+        component: test-logging-users
+    spec:
+      containers:
+      - name: test-logging-users
+        image: gcr.io/papaya-testing-project/test-logging-users-deployment:v3
+        resources:
+          requests:
+              memory: "256Mi"
+              cpu: "62m"
+          limits:
+            memory: "512Mi"
+            cpu: "93m"
+        ports:
+        - containerPort: 3002

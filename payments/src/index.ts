@@ -6,7 +6,7 @@ const start = async () => {
 
   console.log('[Payment MicroService] Connected');
 
-  app.listen(3000, () => {
+  app.listen(3001, () => {
     console.log('[Payment MicroService] - Listen on port 3000');
   });
 };
