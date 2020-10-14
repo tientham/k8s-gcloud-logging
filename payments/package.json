@@ -8,7 +8,7 @@
     "test:ci": "jest",
     "start-dev": "nodemon ./src/server/index",
     "build": "npm run build:js",
-    "build:js": "BABEL_DISABLE_CACHE=1 babel src --copy-files --source-maps=inline --out-dir dist --extensions \".js,.ts\"",
+    "build:js": "rm -rf dist && BABEL_DISABLE_CACHE=1 babel src --copy-files --source-maps=inline --out-dir dist --extensions \".js,.ts\"",
     "start": "node ./dist/index"
   },
   "author": "Minh Tien To",

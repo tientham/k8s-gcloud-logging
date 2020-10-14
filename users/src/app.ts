@@ -1,6 +1,7 @@
 import express from 'express';
 import { json } from 'body-parser';
 import { newUserRouter } from './routes/new';
+
 const winston = require('winston');
 const {LoggingWinston} = require('@google-cloud/logging-winston');
 
@@ -20,8 +21,9 @@ app.use(json());
 app.use(newUserRouter);
 logger.info('[User MicroService] started!');
 
+
 app.all('*', async (req, res) => {
-  console.log('Hello');
+  logger.info('Hello');
 });
 
-export {app};
+export {app, logger};

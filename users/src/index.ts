@@ -1,13 +1,14 @@
-import { app } from "./app";
-
+import { app, logger } from "./app";
+const axios = require("axios");
 
 const start = async () => {
-  console.log('[User MicroService] Starting...');
+  logger.info('[User MicroService] Starting...');
 
-  console.log('[User MicroService] Connected');
+  logger.info('[User MicroService] Connected');
 
-  app.listen(3002, () => {
-    console.log('[User MicroService] - Listen on port 3000');
+  app.listen(3002, async () => {
+    logger.info('[User MicroService] - Listen on port 3000');
+    await axios.get("http://test-logging-payment-service:3001/api/payment");
   });
 };
 

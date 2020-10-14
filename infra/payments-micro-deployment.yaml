@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: test-logging-payment
-        image: gcr.io/papaya-testing-project/test-logging-payment-deployment:v3
+        image: gcr.io/papaya-testing-project/test-logging-payment-deployment:v9
         resources:
           requests:
               memory: "256Mi"

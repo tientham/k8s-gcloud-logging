@@ -8,7 +8,7 @@
     "test:ci": "jest",
     "start-dev": "nodemon ./src/server/index",
     "build": "npm run build:js",
-    "build:js": "BABEL_DISABLE_CACHE=1 babel src --copy-files --source-maps=inline --out-dir dist --extensions \".js,.ts\"",
+    "build:js": "rm -rf dist && BABEL_DISABLE_CACHE=1 babel src --copy-files --source-maps=inline --out-dir dist --extensions \".js,.ts\"",
     "start": "node ./dist/index"
   },
   "author": "Minh Tien To",
@@ -41,7 +41,8 @@
     "mongoose": "^5.9.21",
     "mongoose-update-if-current": "^1.4.0",
     "ts-node-dev": "^1.0.0-pre.50",
-    "typescript": "^3.9.6"
+    "typescript": "^3.9.6",
+    "axios": "^0.19.2"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",

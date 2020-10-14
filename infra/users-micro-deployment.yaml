@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: test-logging-users
-        image: gcr.io/papaya-testing-project/test-logging-users-deployment:v3
+        image: gcr.io/papaya-testing-project/test-logging-users-deployment:v9
         resources:
           requests:
               memory: "256Mi"

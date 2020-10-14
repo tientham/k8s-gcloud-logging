@@ -1,13 +1,13 @@
-import { app } from "./app";
+import { app, logger } from "./app";
 
 
 const start = async () => {
-  console.log('[Payment MicroService] Starting...');
+  logger.info('[Payment MicroService] Starting...');
 
-  console.log('[Payment MicroService] Connected');
+  logger.info('[Payment MicroService] Connected');
 
   app.listen(3001, () => {
-    console.log('[Payment MicroService] - Listen on port 3000');
+    logger.info('[Payment MicroService] - Listen on port 3000');
   });
 };
 
